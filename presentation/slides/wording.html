@@ -1,0 +1,92 @@
+<!--Wording-->
+<section>
+    <section>
+        <h2>Ansible Wording</h2>
+        <ul>
+            <li>
+                Inventories
+            </li>
+            <li>
+                Playbooks
+            </li>
+            <li>
+                Roles
+            </li>
+            <li>
+                Tasks
+            </li>
+        </ul>
+        <aside class="notes">
+            <ul>
+                <li>
+                    <b>Tasks</b> - possible actions that Ansible can execute, specific commands, or higher level procedures
+                </li>
+                <li>
+                    <b>Inventories</b> - holds a list of Ansible-managed servers.
+                </li>
+                <li>
+                    <b>Playbooks</b> - different from adhoc task execution mode, steps defined in file, are in YAML-Syntax,
+                    playbook has plays, play maps group of hosts to roles
+                </li>
+                <li>
+                    <b>Roles</b> - module encapsulation
+                </li>
+
+            </ul>
+        </aside>
+    </section>
+
+    <section>
+        <h2>Ansible Wording</h2>
+        <img src="assets/images/ansible-wording-1.png" style="height: 450px;">
+        <p>
+            <small>source: <a href="http://www.slideshare.net/excellaco/using-ansible-vault-to-protect-your-secrets">Using ansible vault to protect your secrets</a></small>
+        </p>
+    </section>
+
+    <section>
+        <h2>Ansible Roles</h2>
+        <pre>
+                            <code class="yml" data-trim data-noescape>
+    production                # inventory file for production servers
+    staging                   # inventory file for staging environment
+
+    group_vars/
+    group1                 # here we assign variables to particular groups
+    group2                 # ""
+    host_vars/
+    hostname1              # if systems need specific variables, put them here
+    hostname2              # ""
+
+    library/                  # if any custom modules, put them here (optional)
+    filter_plugins/           # if any custom filter plugins, put them here (optional)
+
+    site.yml                  # master playbook
+    webservers.yml            # playbook for webserver tier
+    dbservers.yml             # playbook for dbserver tier
+
+    roles/
+        common/               # this hierarchy represents a "role"
+            tasks/            #
+                main.yml      #  <-- tasks file can include smaller files if warranted
+            handlers/         #
+                main.yml      #  <-- handlers file
+            templates/        #  <-- files for use with the template resource
+                ntp.conf.j2   #  <------- templates end in .j2
+            files/            #
+                bar.txt       #  <-- files for use with the copy resource
+                foo.sh        #  <-- script files for use with the script resource
+            vars/             #
+                main.yml      #  <-- variables associated with this role
+            defaults/         #
+                main.yml      #  <-- default lower priority variables for this role
+            meta/             #
+                main.yml      #  <-- role dependencies
+
+        webtier/              # same kind of structure as "common" was above, done for the webtier role
+        monitoring/           # ""
+        fooapp/               # ""
+                            </code>
+                        </pre>
+    </section>
+</section>

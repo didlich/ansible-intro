@@ -1,0 +1,125 @@
+<!--Context-->
+<section>
+    <section>
+        <h2>Ansible Definition</h2>
+        <p>
+            <blockquote cite="https://en.wikipedia.org/wiki/Ansible_(software) ">
+                &ldquo;Ansible is an open-source automation engine that
+                <span class="fragment highlight-blue">automates</span> cloud
+                <span class="fragment highlight-green">provisioning</span>,
+                <span class="fragment highlight-green">configuration management</span>, and
+                <span class="fragment highlight-green">application deployment</span>.[3] Once installed on a
+                <span class="fragment highlight-red">control node</span>, Ansible, which is an
+                <span class="fragment highlight-red">agentless</span> architecture, connects to a managed node through the
+                default
+                <span class="fragment highlight-red">OpenSSH connection</span> type.&rdquo;</br>
+                - <a href="https://en.wikipedia.org/wiki/Ansible_(software)">Wikipedia</a>
+            </blockquote>
+        </p>
+    </section>
+
+    <section>
+        <h2>Ansible Background</h2>
+        <ul>
+            <li>
+                developed by Michael DeHaan, 2013 founding of AnsibleWorks Inc. -> Ansible Inc.
+            </li>
+            <li>
+                owned by Red Hat Inc. (October 2015)
+            </li>
+            <li>
+                developed with Python
+            </li>
+            <li>
+                runs on all UNIX based OS (Linux, OSX, AIX ...)
+            </li>
+            <li>
+                support for Windows with Powershell 3.0 (winrm)
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>What is the point?</h2>
+        <p>
+            <blockquote>
+                &ldquo;Using Ansible, we’ve been able to cut down certain processes<br>
+                <span class="fragment highlight-red">from 17 hours to 3 minutes</span>.<br> Ansible is unquantifiable in
+                its benefit.&rdquo;<br> - Branden Faulls, <a href="https://fatmap.com/">FATMAP</a>
+            </blockquote>
+        </p>
+    </section>
+
+    <section>
+        <h2>Is there more?</h2>
+        <ul>
+            <li>
+                Infrastructure as Code<br>
+                <ul>
+                    <li>
+                        <i>committed to GitHub</i>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Accessible to others
+                <ul>
+                    <li>
+                        <i>use it on their own servers</i>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Auditable & Documentable
+                <ul>
+                    <li>
+                        <i>can see the history of changes</i>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Context - Ansible Use Cases</h2>
+        <h3>This is DevOps!</h3>
+        <ul>
+            <li>Provisioning</li>
+            <li>Configuration Management</li>
+            <li>App Deployment</li>
+            <li>Continuous Delivery</li>
+            <li>Security & Compliance</li>
+            <li>Orchestration</li>
+        </ul>
+    </section>
+
+    <section data-background-transition="zoom" data-background="assets/images/configuration_management_diagram.png" data-background-size="50%"
+        data-background-position="left top">
+        <div style="text-align: right;">
+<h2>Configuration Management</h2>
+<p>
+    configure all servers to run app version 2.1
+</p>
+</div>
+</section>
+
+<section data-background-transition="zoom" data-background="assets/images/app_deploy_diagram.png" data-background-size="45%"
+    data-background-position="top right">
+    <h2 style="text-align: left;">App Deployment</h2>
+<ul>
+    <li>deploy multi-tier applications <br>reliably & consistently</li>
+    <li>all from one common framework</li>
+    <li>push application artifacts from one common system</li>
+</ul>
+</section>
+
+<section data-background-transition="zoom" data-background="assets/images/continuous_delivery_diagram.png" data-background-size="40%"
+    data-background-position="top left">
+    <h2 style="text-align: right;">Continuous Delivery</h2>
+<ul>
+    <li>CI asks Ansible to run a Playbook that deploys a staging environment with the application</li>
+    <li>run a production deployment after stage tests pass</li>
+    <li>check out artifacts from VCS on each machine</li>
+</ul>
+</section>
+</section>

@@ -1,0 +1,47 @@
+<!--Architecture-->
+<section>
+    <h2>Ansible Architecture</h2>
+    <img src="assets/images/ansible-arch.svg" style="height: 100%">
+<p>
+
+</p>
+<aside class="notes">
+    <ul>
+        <li>
+            push approach
+        </li>
+        <li>
+            two types of servers: controlling machines and nodes
+        </li>
+        <li>
+            there is a single controlling machine which is where orchestration begins
+        </li>
+        <li>
+            nodes are managed by a controlling machine over SSH
+        </li>
+        <li>
+            controlling machine describes the location of nodes through its inventory
+        </li>
+        <li>
+            to orchestrate nodes, Ansible deploys modules to nodes over SSH
+        </li>
+        <li>
+            Modules are temporarily stored in the nodes and communicate with the controlling machine through a JSON protocol over the
+            standard output
+        </li>
+        <li>
+            when Ansible is not managing nodes, it does not consume resources because no daemons or programs are executing for Ansible
+            in the background
+        </li>
+        <li>
+            Ansible uses an agentless architecture, unlike Chef, Puppet, and CFEngine
+        </li>
+        <li>
+            With an agent-based architecture, nodes must have a locally installed daemon that communicates with a controlling machine
+        </li>
+        <li>
+            agentless type of architecture reduces the overhead
+        </li>
+    </ul>
+</aside>
+</section>
