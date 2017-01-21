@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Ansible - Introduction</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/league.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Pull in our slide, see javascript in body tag -->
+    <link rel="import" href="slides/01-cover.html">
+    <link rel="import" href="slides/agenda.html">
+    <link rel="import" href="slides/context.html">
+    <link rel="import" href="slides/architecture.html">
+    <link rel="import" href="slides/wording.html">
+    <link rel="import" href="slides/demo.html">
+    <link rel="import" href="slides/discussion.html">
+    <link rel="import" href="slides/references.html">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- using webcomponents.js to load slides from seperate html files, placed in slides folder -->
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.23/webcomponents-lite.min.js"></script>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+        window.addEventListener('HTMLImportsLoaded', function (e) {
+            var links = document.querySelectorAll('link[rel=import]');
+
+            links.forEach(function (link, idx, arr) {
+                var content = link.import.querySelector('section');
+                var revealElem = document.body.getElementsByClassName("reveal")[0];
+                var slidesElem = revealElem.getElementsByClassName("slides")[0];
+                slidesElem.appendChild(document.importNode(content, true));
+            });
+
+            // More info https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                history: true,
+
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'plugin/markdown/marked.js' },
+                    { src: 'plugin/markdown/markdown.js' },
+                    { src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+                ]
+            });
+        });
+    </script>
+
+</body>
+
+</html>
