@@ -1,0 +1,7 @@
+---
+wf_version: 10.0.0
+wf_group: wildfly
+wf_user: wildfly
+wf_home: /opt/wildfly
+wf_mode: standalone
+wf_database: ""

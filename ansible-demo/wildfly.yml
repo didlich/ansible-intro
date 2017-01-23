@@ -1,0 +1,5 @@
+---
+- hosts: wildflyvm
+  roles:
+    - { role: "library/ansible-java8-oracle", tags: ['java']}
+    - { role: "wildfly", become: true, tags: ['wildflyas']}
